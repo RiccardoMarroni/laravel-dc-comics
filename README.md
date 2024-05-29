@@ -60,7 +60,7 @@ git push -u origin main
 
 composer install
 
-php artisan key:generate
+
 
 npm install
 
