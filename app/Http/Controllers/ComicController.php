@@ -41,6 +41,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $form_data = $request->validated();
+        $new_comic = Comic::create($form_data);
+
         $formdata = $request->all();
 
         $newComic = new Comic();
@@ -98,6 +101,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $form_data = $request->validated();
+        $comic->update($form_data);
         $formData = $request->all();
         $comic = Comic::findOrFail($id);
         $comic->title = $formData['title'];
